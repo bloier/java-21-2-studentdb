@@ -1,5 +1,7 @@
 package de.neuefische.studendb.db;
 
+import de.neuefische.studendb.model.HistoryStudent;
+import de.neuefische.studendb.model.MathStudent;
 import de.neuefische.studendb.model.Student;
 
 public class StudentDb {
@@ -68,5 +70,12 @@ public class StudentDb {
         return -1;
     }
 
+    public int[] resultOfGradeMethod() {
+        int[] gradesOfStudents = new int[students.length];
+        for (int i = 0; i< students.length; i++) {
+            gradesOfStudents[i] = students[i].calculateGradeAverage();
+         }
+        return gradesOfStudents;
+    }
 
 }
